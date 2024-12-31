@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "command": "g++ ${file} -o a.out && ./a.out && rm a.out",
+            "args": [],
+            "options": {}
+        }
+    ]
+}
