@@ -1,6 +1,6 @@
 #include<iostream>
 #include<vector>
-// #include<numeric>
+// #include<numeric>    
 using namespace std;
 int main() {
     int n, g;
