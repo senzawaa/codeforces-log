@@ -4,41 +4,31 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    int cn;
-    vector<vector<int>> a(n);
+    int a[n][2];
     int inc = 0;
+    int t;
     for (int i = 0; i < n; i++) {
-        cin >> cn;
-        // for (int j = 0; j < cn; j++) {
-        //     a[i].push_back(++inc);
-        // }
-        a[i].push_back(++inc);
-        inc += cn-1;
-        a[i].push_back(inc);
+        inc++;
+        cin >> t;
+        a[i][0] = inc;
+        inc += --t;
+        a[i][1] = inc;
     }
-    // for (auto vec : a) {
-    //     for (auto nm : vec) {
-    //         cout << nm << ' ';
-    //     }
-    //     cout << '\n';
-    // }
     int m;
     cin >> m;
-    int q[m];
+    int q;
     for (int i = 0; i < m; i++) {
-        cin >> q[i];
-        int l=0,r=n-1;
+        cin >> q;
+        int l = 0; int r = n - 1;
         while (l <= r) {
-            int m=(r-l)/2+l;
-            if (a[m][0] <= q[i] && q[i] <= a[m][1]) {
+            int m = (r-l)/2 + l;
+            if ( a[m][0] <= q && q <= a[m][1] ) {
                 cout << (m+1) << '\n';
                 break;
             }
-            if (q[i] < a[m][0]) {
+             else if (a[m][0] > q) {
                 r = m - 1;
-            } else {
-                l = m + 1;
-            }
+             } else l = m + 1;
         }
     }
 }
