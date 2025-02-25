@@ -6,6 +6,6 @@ int main() {
     while (t--) {
         int a, b, c;
         cin >> a >> b >> c;
-        cout << ((max({a,b,c})-(min({a,b,c})))) << '\n';
+        cout << ((max(max(a,b),c)-(min(min(a,b),c)))) << '\n';
     }
 }
